@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/ProvinceAdminController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/SchoolAdminController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/WorkController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/routes.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/admin/setAdmin.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/admin/userPower.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/addPartner.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/applicant.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/queryStatus.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/storeSuccess.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/work_info1.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/work_info2.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/work_info3.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/form/work_info4.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/front/index.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/adminProvince.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/adminSchool.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/background.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/layouts/main.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/ArticleStoreSuccess.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/addSpecialist.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/newArticle.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/provinceIndex.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolAlter.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolIndex.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolNot.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolPass.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolQuery.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolUp.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/schoolWait.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/sendInformation.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/sendInformationsuccess.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/specialistStatistics.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/storeSpecialistSuccess.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" charset="UTF-8" />
+  </component>
+</project>
