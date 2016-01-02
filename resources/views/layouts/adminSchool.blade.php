@@ -84,27 +84,27 @@
             <div class="sidebar-nav navbar-collapse">
                 <ul class="nav" id="side-menu">
                     <li>
-                        <a href="/admin/schoolIndex"><i class="fa fa-dashboard fa-fw"></i>学校管理</a>
+                        <a href="/admin/schoolIndex"><i class="fa fa-dashboard fa-fw"></i>通知信息</a>
                     </li>
 
-                    <li>
-                        <a href="#"><i class="fa fa-wrench fa-fw"></i>所有作品<span class="fa arrow"></span></a>
-                        <ul class="nav nav-second-level">
-                            <li>
-                                <a href="/admin/schoolWait">待审核</a>
-                            </li>
-                            <li>
-                                <a href="/admin/schoolPass">审核通过</a>
-                            </li>
-                            <li>
-                                <a href="/admin/schoolAlter">待修改</a>
-                            </li>
-                            <li>
-                                <a href="/admin/schoolNot">已淘汰</a>
-                            </li>
-                        </ul>
-                        <!-- /.nav-second-level -->
-                    </li>
+                    {{--<li>--}}
+                        {{--<a href="#"><i class="fa fa-wrench fa-fw"></i>所有作品<span class="fa arrow"></span></a>--}}
+                        {{--<ul class="nav nav-second-level">--}}
+                            {{--<li>--}}
+                                {{--<a href="/admin/schoolWait">待审核</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/admin/schoolPass">审核通过</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/admin/schoolAlter">待修改</a>--}}
+                            {{--</li>--}}
+                            {{--<li>--}}
+                                {{--<a href="/admin/schoolNot">已淘汰</a>--}}
+                            {{--</li>--}}
+                        {{--</ul>--}}
+                        {{--<!-- /.nav-second-level -->--}}
+                    {{--</li>--}}
 
                     <li>
                         <a href="/admin/schoolUp"><i class="fa fa-cloud-upload fa-fw"></i>作品上报</a>

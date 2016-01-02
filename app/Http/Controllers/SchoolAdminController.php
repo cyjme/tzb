@@ -26,51 +26,14 @@ class SchoolAdminController extends Controller
         $userId = Auth::user()['id'];
         $school = DB::select('SELECT school FROM user_power WHERE (user_id=?)',[$userId])[0]->school;
 
-        //查询到该学校的等待状态的作品
-        $wait = DB::select(
-            'SELECT work.name AS workName,work.big_class,work.id AS workId,applicant.name AS applicantName,applicant.faculty,work_status.status
-	          FROM (WORK JOIN applicant ON work.user_id = applicant.user_id) JOIN work_status ON work.id = work_status.work_id
-              WHERE
-	              (school = ? AND work_status.status=?)',[$school,'schoolWait']
-        );
-        $pass = DB::select(
-            'SELECT work.name AS workName,work.big_class,work.id AS workId,applicant.name AS applicantName,applicant.faculty,work_status.status
-	          FROM (WORK JOIN applicant ON work.user_id = applicant.user_id) JOIN work_status ON work.id = work_status.work_id
-              WHERE
-	              (school = ? AND (work_status.status=? or work_status.status=?))',[$school,'schoolPass','provinceWait']
-        );
-        $alter = DB::select(
-            'SELECT work.name AS workName,work.big_class,work.id AS workId,applicant.name AS applicantName,applicant.faculty,work_status.status
-	          FROM (WORK JOIN applicant ON work.user_id = applicant.user_id) JOIN work_status ON work.id = work_status.work_id
-              WHERE
-	              (school = ? AND work_status.status=?)',[$school,'schoolAlter']
-        );
-        $not = DB::select(
-            'SELECT work.name AS workName,work.big_class,work.id AS workId,applicant.name AS applicantName,applicant.faculty,work_status.status
-	          FROM (WORK JOIN applicant ON work.user_id = applicant.user_id) JOIN work_status ON work.id = work_status.work_id
-              WHERE
-	              (school = ? AND work_status.status=?)',[$school,'schoolNot']
-        );
-        //获取各个状态的作品的数量
-        $count['wait'] = count($wait);
-        $count['pass'] = count($pass);
-        $count['alter'] = count($alter);
-        $count['not'] = count($not);
+        $infos = DB::select('select * from information ');
+        return view('pages.schoolIndex',compact('infos'));
+    }
 
-        //获取各种作品分类的数量
-        //自然科学类
-        $a = DB::select('SELECT COUNT(*) as number FROM WORK WHERE big_class = ?',['自然科学类学术论文']);
-        //哲学社会类
-        $b = DB::select('SELECT COUNT(*) as number FROM WORK WHERE big_class = ?',['哲学社会科学类社会调查报告和学术论文']);
-        //科技发明类
-        $c = DB::select('SELECT COUNT(*) as number FROM WORK WHERE big_class = ?',['科技发明制作']);
-        $fenlei['a'] = $a[0]->number;
-        $fenlei['b'] = $b[0]->number;
-        $fenlei['c'] = $c[0]->number;
-
-        //获取各院系提交作品数量
-        $facultyNum = DB::select('SELECT faculty,COUNT(*) AS number FROM applicant  WHERE school =? GROUP BY faculty',[$school]);
-        return view('pages.schoolIndex',compact('fenlei','count','facultyNum'));
+    //查看通知详情
+    public function queryInfo($id){
+        $data = DB::select('SELECT * FROM information WHERE id =?',[$id])[0];
+        return view('school.queryInfo',compact('data'));
     }
 
     //上报信息到省团委

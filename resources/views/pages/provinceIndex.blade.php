@@ -25,15 +25,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-envelope-o fa-5x"></i>
+                            <i class="fa fa-bar-chart-o fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">26</div>
-                            <div>待审核作品!</div>
+                            <div class="huge">{{$data['zirannumber']}}</div>
+                            <div>自然科学类</div>
                         </div>
                     </div>
                 </div>
-                <a href="/admin/provinceWait">
+                <a href="/admin/ziran">
                     <div class="panel-footer">
                         <span class="pull-left">点击查看</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -47,15 +47,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-smile-o fa-5x"></i>
+                            <i class="fa fa-user fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">12</div>
-                            <div>审核通过作品!</div>
+                            <div class="huge">{{$data['zhexuenumber']}}</div>
+                            <div>哲学社会科学类</div>
                         </div>
                     </div>
                 </div>
-                <a href="/admin/provincePass">
+                <a href="/admin/zhexue">
                     <div class="panel-footer">
                         <span class="pull-left">点击查看</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -69,15 +69,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-clock-o fa-5x"></i>
+                            <i class="fa fa-laptop fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">124</div>
-                            <div>待修改作品!</div>
+                            <div class="huge">{{$data['kejianumber']}}</div>
+                            <div>科技发明制作Α类!</div>
                         </div>
                     </div>
                 </div>
-                <a href="/admin/provinceAlter">
+                <a href="/admin/kejia">
                     <div class="panel-footer">
                         <span class="pull-left">点击查看</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -91,15 +91,15 @@
                 <div class="panel-heading">
                     <div class="row">
                         <div class="col-xs-3">
-                            <i class="fa fa-frown-o fa-5x"></i>
+                            <i class="fa fa-spinner fa-5x"></i>
                         </div>
                         <div class="col-xs-9 text-right">
-                            <div class="huge">13</div>
-                            <div>已淘汰作品!</div>
+                            <div class="huge">{{$data['kejibnumber']}}</div>
+                            <div>科技发明制作Β类</div>
                         </div>
                     </div>
                 </div>
-                <a href="/admin/provinceNot">
+                <a href="/admin/kejib">
                     <div class="panel-footer">
                         <span class="pull-left">点击查看</span>
                         <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
@@ -124,10 +124,19 @@
         <div class="col-lg-6 col-md-6">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    作品分类条形图
+                    各院校作品数量
                 </div>
                 <div class="panel-body">
-                    <canvas id="canvas" height="450" width="600"></canvas>
+                    <table class="table">
+                        <th>学校名称</th>
+                        <th>作品数量</th>
+                    @foreach($schools as $school)
+                            <tr>
+                                <td>{{$school->school}}</td>
+                                <td>{{$school->COUNT}}</td>
+                            </tr>
+                        @endforeach
+                    </table>
                 </div>
             </div>
         </div>
@@ -153,38 +162,41 @@
 <script src="../dist/js/sb-admin-2.js"></script>
 
 
+{{--获取学校作品各个分类的数量，隐藏起来，方便页面中的饼图的js调用--}}
+<input type="hidden" id="a" value="{{$data['zirannumber']}}">
+<input type="hidden" id="b" value="{{$data['zhexuenumber']}}">
+<input type="hidden" id="c" value="{{$data['kejianumber']}}">
+<input type="hidden" id="d" value="{{$data['kejibnumber']}}">
 <script>
+    var a = document.getElementById('a').value;
+    var b = document.getElementById('b').value;
+    var c = document.getElementById('c').value;
+    var d = document.getElementById('d').value;
 
     var pieData = [
         {
-            value: 300,
+            value: a,
             color:"#F7464A",
             highlight: "#FF5A5E",
-            label: "Red"
+            label: "自然科学类"
         },
         {
-            value: 50,
+            value: b,
             color: "#46BFBD",
             highlight: "#5AD3D1",
-            label: "Green"
+            label: "哲学社会科学类"
         },
         {
-            value: 100,
+            value: c,
             color: "#FDB45C",
             highlight: "#FFC870",
-            label: "Yellow"
+            label: "科技发明制作Α类"
         },
         {
-            value: 40,
+            value: d,
             color: "#949FB1",
             highlight: "#A8B3C5",
-            label: "Grey"
-        },
-        {
-            value: 120,
-            color: "#4D5360",
-            highlight: "#616774",
-            label: "Dark Grey"
+            label: "科技发明制作Β类"
         }
 
     ];
@@ -195,33 +207,9 @@
     };
 
 
-    {{--作品分类条形图--}}
-    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
-    var barChartData = {
-        labels : ["January","February","March","April","May","June","July"],
-        datasets : [
-            {
-                fillColor : "rgba(220,220,220,0.5)",
-                strokeColor : "rgba(220,220,220,0.8)",
-                highlightFill: "rgba(220,220,220,0.75)",
-                highlightStroke: "rgba(220,220,220,1)",
-                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-            },
-            {
-                fillColor : "rgba(151,187,205,0.5)",
-                strokeColor : "rgba(151,187,205,0.8)",
-                highlightFill : "rgba(151,187,205,0.75)",
-                highlightStroke : "rgba(151,187,205,1)",
-                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
-            }
-        ]
 
-    }
     window.onload = function(){
-        var ctx = document.getElementById("canvas").getContext("2d");
-        window.myBar = new Chart(ctx).Bar(barChartData, {
-            responsive : true
-        });
+
 
         var ctx = document.getElementById("chart-area").getContext("2d");
         window.myPie = new Chart(ctx).Pie(pieData);

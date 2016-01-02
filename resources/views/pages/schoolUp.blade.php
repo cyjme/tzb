@@ -7,12 +7,35 @@
 @extends('layouts.adminSchool')
 @section('content')
     <div class="row">
-        <div class="col-lg-12">
-            <h2>当点击‘确认上报’按钮后，即将将本校的‘审核通过作品’上报至省团委</h2>
+        <h1>上传作品申报书</h1>
+        {!! Form::open(['url'=>'/work/pdf','files'=>true,'id'=>'myform']) !!}
+        <input type="hidden" name="info_id" value="3">
+        <div class="form-group">
+            {!! Form::label('document','请上传pdf格式的申报书：') !!}
+            {!! Form::file('document') !!}
         </div>
-        <div class="col-lg-12">
-            <a href="/admin/schoolUpStore"><button class="btn btn-danger">确认上报</button></a>
+        <div class="form-group">
+            {!! Form::submit('提交，进入下一步',['class'=>'btn btn-success form-control']) !!}
         </div>
+        {!! Form::close() !!}
+
+        <script src="/js/jquery2.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#myform').bootstrapValidator({
+                    fields: {
+                        document: {
+                            validators: {
+                                notEmpty: {
+                                    message: '请上传论文文档'
+                                }
+                            }
+                        },
+
+                    },
+                });
+            });
+        </script>
     </div>
     <!-- /.row -->
 @endsection

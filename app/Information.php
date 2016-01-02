@@ -14,6 +14,8 @@ class Information extends Model
         'send_people',
         'send_time',
         'validity_time',
-        'have_read'
+        'have_read',
+        'title',
+        'content'
     ];
 }

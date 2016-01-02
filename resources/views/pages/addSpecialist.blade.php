@@ -35,7 +35,12 @@
         </div>
         <div class="form-group">
             {!! Form::label('class','对应挑战杯类别：') !!}
-            {!! Form::text('class',null,['class'=>'form-control']) !!}
+            {!! Form::select('class',[
+                '自然科学类学术论文'=>'自然科学类学术论文',
+                '哲学社会科学类社会调查报告和学术论文'=>'哲学社会科学类社会调查报告和学术论文',
+                '科技发明制作A'=>'科技发明制作A',
+                '科技发明制作B'=>'科技发明制作B',
+                ]) !!}
         </div>
         <div class="form-group">
             {!! Form::submit('添加',['class'=>'btn btn-success form-control']) !!}

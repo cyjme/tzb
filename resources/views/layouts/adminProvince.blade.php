@@ -58,7 +58,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/admin/schoolIndex">挑战杯系统</a>
+            <a class="navbar-brand" href="/admin/provinceIndex">挑战杯系统</a>
         </div>
         <!-- /.navbar-header -->
 
@@ -87,21 +87,20 @@
                     <li>
                         <a href="/admin/provinceIndex"><i class="fa fa-dashboard fa-fw"></i>省团委管理</a>
                     </li>
-
                     <li>
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>所有作品<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin/provinceWait">待审核</a>
+                                <a href="/admin/ziran">自然科学类</a>
                             </li>
                             <li>
-                                <a href="/admin/provincePass">审核通过</a>
+                                <a href="/admin/zhexue">哲学社会科学类</a>
                             </li>
                             <li>
-                                <a href="/admin/provinceAlter">待修改</a>
+                                <a href="/admin/kejia">科技发明制作Α类</a>
                             </li>
                             <li>
-                                <a href="/admin/provinceNot">已淘汰</a>
+                                <a href="/admin/kejib">科技发明制作Β类</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -111,10 +110,10 @@
                         <a href="#"><i class="fa fa-wrench fa-fw"></i>评奖管理<span class="fa arrow"></span></a>
                         <ul class="nav nav-second-level">
                             <li>
-                                <a href="/admin/provinceWait">评奖</a>
+                                <a href="/admin/award">评奖</a>
                             </li>
                             <li>
-                                <a href="/admin/provincePass">得奖统计</a>
+                                <a href="/admin/queryAward">得奖统计</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->
@@ -127,7 +126,7 @@
                                 <a href="/admin/addSpecialist">添加专家</a>
                             </li>
                             <li>
-                                <a href="/admin/provincePass">专家统计</a>
+                                <a href="/admin/specialistStatistics">专家统计</a>
                             </li>
                         </ul>
                         <!-- /.nav-second-level -->

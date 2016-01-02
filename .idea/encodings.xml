@@ -2,6 +2,7 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/app/Http/Controllers/PdfController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/ProvinceAdminController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/SchoolAdminController.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/app/Http/Controllers/WorkController.php" charset="UTF-8" />
@@ -25,6 +26,7 @@
     <file url="file://$PROJECT_DIR$/resources/views/pages/ArticleStoreSuccess.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/addSpecialist.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/newArticle.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/pages/pdfWorkInfo.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/provinceIndex.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/schoolAlter.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/schoolIndex.blade.php" charset="UTF-8" />
@@ -37,6 +39,16 @@
     <file url="file://$PROJECT_DIR$/resources/views/pages/sendInformationsuccess.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/specialistStatistics.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/pages/storeSpecialistSuccess.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/award.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/kejia.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/kejib.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/query.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/queryAward.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/queryAwardFirst.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/queryAwardSecond.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/zhexue.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/province/ziran.blade.php" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/resources/views/school/queryInfo.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" charset="UTF-8" />
   </component>
 </project>

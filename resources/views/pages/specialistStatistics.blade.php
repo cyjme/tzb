@@ -52,31 +52,39 @@
     </div>
 
     {{--获取各个分类专家的数量，隐藏起来，方便页面中的饼图的js调用--}}
-    <input type="hidden" id="a" value="{{$fenlei['a']}}">
-    <input type="hidden" id="b" value="{{$fenlei['b']}}">
-    <input type="hidden" id="c" value="{{$fenlei['c']}}">
+    <input type="hidden" id="ziran" value="{{$fenlei['ziran']}}">
+    <input type="hidden" id="zhexue" value="{{$fenlei['zhexue']}}">
+    <input type="hidden" id="kejia" value="{{$fenlei['kejia']}}">
+    <input type="hidden" id="kejib" value="{{$fenlei['kejib']}}">
     <script>
-        var a = document.getElementById('a').value;
-        var b = document.getElementById('b').value;
-        var c = document.getElementById('c').value;
+        var ziran = document.getElementById('ziran').value;
+        var zhexue = document.getElementById('zhexue').value;
+        var kejia = document.getElementById('kejia').value;
+        var kejib = document.getElementById('kejib').value;
         var pieData = [
             {
-                value: a,
+                value: ziran,
                 color:"#F7464A",
                 highlight: "#FF5A5E",
                 label: "自然科学类"
             },
             {
-                value: b,
+                value: zhexue,
                 color: "#46BFBD",
                 highlight: "#5AD3D1",
                 label: "哲学社会类"
             },
             {
-                value: c,
+                value: kejia,
                 color: "#FDB45C",
                 highlight: "#FFC870",
-                label: "科技发明类"
+                label: "科技发明A类"
+            },
+            {
+                value: kejib,
+                color: "#4D5360",
+                highlight: "#616774",
+                label: "科技发明B类"
             }
         ];
 

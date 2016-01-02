@@ -15,6 +15,14 @@
 Route::get('/index','FrontController@index');
 Route::get('/','FrontController@index');
 
+
+//测试提取pdf信息
+Route::get('/pdf','PdfController@index');
+//分析上传的文档
+Route::post('/work/pdf','PdfController@judge');
+
+
+
 //查看文章
 Route::get('/article/query/{id}','FrontController@query');
 
@@ -48,6 +56,8 @@ Route::get('/admin/judge','AdminController@judge');
 Route::group(['middleware'=>'schoolAdminJudge'],function(){
     //学校管理后台
     Route::get('/admin/schoolIndex','SchoolAdminController@index');
+    //查看通知信息
+    Route::get('/queryInfo/{id}','SchoolAdminController@queryInfo');
     //待审核作品
     Route::get('/admin/schoolWait','SchoolAdminController@wait');
     //已通过作品
@@ -70,14 +80,26 @@ Route::group(['middleware'=>'schoolAdminJudge'],function(){
 Route::group(['middleware'=>'ProvinceAdminJudge'],function(){
     //省管理后台
     Route::get('/admin/provinceIndex','ProvinceAdminController@index');
-//待审核项目
-    Route::get('/admin/provinceWait','ProvinceAdminController@wait');
-//已通过项目
-    Route::get('/admin/provincePass','ProvinceAdminController@pass');
-//待修改项目
-    Route::get('/admin/provinceAlter','ProvinceAdminController@alter');
-//未通过项目
-    Route::get('/admin/provinceNot','ProvinceAdminController@not');
+//待审核项目-自然科学类学术论文
+    Route::get('/admin/ziran','ProvinceAdminController@ziran');
+//已通过项目-哲学社会科学类社会调查报告和学术论文
+    Route::get('/admin/zhexue','ProvinceAdminController@zhexue');
+//待修改项目-科技发明制作A
+    Route::get('/admin/kejia','ProvinceAdminController@kejia');
+//未通过项目-科技发明制作B
+    Route::get('/admin/kejib','ProvinceAdminController@kejib');
+    //查看作品详情
+    Route::get('admin/queryWork/{id}','ProvinceAdminController@query');
+    //ajax设置作品奖项
+    Route::post('/admin/setReward','ProvinceAdminController@setReward');
+    //评奖
+    Route::get('/admin/award','ProvinceAdminController@award');
+    //查看获奖情况
+    Route::get('/admin/queryAward','ProvinceAdminController@queryAward');
+    Route::get('/admin/queryAwardFirst','ProvinceAdminController@queryAwardFirst');
+    Route::get('/admin/queryAwardSecond','ProvinceAdminController@queryAwardSecond');
+    Route::get('/admin/queryAwardThree','ProvinceAdminController@queryAwardThree');
+
 //发布文章
     Route::get('/admin/newArticle','ProvinceAdminController@newArticle');
 //存储文章
@@ -96,6 +118,8 @@ Route::group(['middleware'=>'ProvinceAdminJudge'],function(){
     Route::get('admin/sendInformation','ProvinceAdminController@sendInformation');
     Route::post('admin/storeInformation','ProvinceAdminController@storeInformation');
     Route::get('admin/successSend','ProvinceAdminController@successSend');
+    //查看所有作品
+    Route::get('/admin/provinceAllWork','ProvinceAdminController@allWork');
 });
 
 

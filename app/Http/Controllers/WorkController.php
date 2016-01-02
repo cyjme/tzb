@@ -6,7 +6,6 @@
 //编程人：常元检 15649841368
 //测试人：李孝川 18839965525
 namespace App\Http\Controllers;
-
 use App\Work;
 use App\WorkStatus;
 use Illuminate\Http\Request;
@@ -26,6 +25,7 @@ class WorkController extends Controller
     public function index()
     {
         //
+        $parser = new \Smalot\PdfParser\Parser();
     }
 
     /**
