@@ -48,7 +48,7 @@
             </tr>
         @endforeach
     </table>
-
+    <script src="/js/jquery2.1.min.js"></script>
     <script>
         $(function(){
             $(".addAdmin").click(function(){

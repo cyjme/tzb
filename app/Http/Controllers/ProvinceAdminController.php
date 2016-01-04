@@ -95,6 +95,10 @@ class ProvinceAdminController extends Controller
         $data['threeNumber']=DB::select('SELECT COUNT(*) AS COUNT FROM award WHERE province_award=?',['san'])[0]->COUNT;
 //        $data['noAwardNumber']=DB::select('SELECT COUNT(*) AS COUNT FROM award WHERE province_award=?',[''])[0]->COUNT;
         $awards=DB::select('SELECT school ,COUNT(*) as COUNT FROM award LEFT JOIN pdfwork ON award.work_id = pdfwork.id GROUP BY school DESC');
+        $data['ziran'] = DB::select('SELECT COUNT(*) AS COUNT FROM award LEFT JOIN pdfwork ON award.work_id = pdfwork.id WHERE big_class=?',['自然科学类学术论文'])[0]->COUNT;
+        $data['zhexue'] = DB::select('SELECT COUNT(*) AS COUNT FROM award LEFT JOIN pdfwork ON award.work_id = pdfwork.id WHERE big_class=?',['哲学社会科学类社会调查报告和学术论文'])[0]->COUNT;
+        $data['kejia'] = DB::select('SELECT COUNT(*) AS COUNT FROM award LEFT JOIN pdfwork ON award.work_id = pdfwork.id WHERE big_class=?',['科技发明制作Α类'])[0]->COUNT;
+        $data['kejib'] = DB::select('SELECT COUNT(*) AS COUNT FROM award LEFT JOIN pdfwork ON award.work_id = pdfwork.id WHERE big_class=?',['科技发明制作Β类'])[0]->COUNT;
         return view('province.queryAward',compact('data','awards'));
     }
     public function queryAwardFirst(){

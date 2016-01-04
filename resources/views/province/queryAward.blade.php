@@ -144,8 +144,16 @@
 <!-- /.row -->
 
 <div class="row">
-    <div class="">
+    <div class="col-lg-6 col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                各类别奖项数量统计
+            </div>
+            <div class="panel-body">
+                <canvas id="bar" height="450" width="600"></canvas>
+            </div>
 
+        </div>
     </div>
 </div>
 <!-- /.row -->
@@ -166,6 +174,12 @@
 <input type="hidden" id="a" value="{{$data['firstNumber']}}">
 <input type="hidden" id="b" value="{{$data['secondNumber']}}">
 <input type="hidden" id="c" value="{{$data['threeNumber']}}">
+
+<input type="hidden" id="ziran" value="{{$data['ziran']}}">
+<input type="hidden" id="zhexue" value="{{$data['zhexue']}}">
+<input type="hidden" id="kejia" value="{{$data['kejia']}}">
+<input type="hidden" id="kejib" value="{{$data['kejib']}}">
+
 <script>
     var a = document.getElementById('a').value;
     var b = document.getElementById('b').value;
@@ -192,19 +206,35 @@
         }
     ];
 
+
+    var ziran = document.getElementById('ziran').value;
+    var zhexue = document.getElementById('zhexue').value;
+    var kejia = document.getElementById('kejia').value;
+    var kejib = document.getElementById('kejib').value;
+
+    var barChartData = {
+        labels : ["自然科学类","哲学社会类","科技制作A类","科技制作B类"],
+        datasets : [
+            {
+                fillColor : "rgba(46,169,223,0.5)",
+                strokeColor : "rgba(162,140,55,0.8)",
+                highlightFill: "rgba(162,140,55,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data : [ziran,zhexue,kejia,kejib]
+            }
+        ]
+    }
+
     window.onload = function(){
         var ctx = document.getElementById("chart-area").getContext("2d");
         window.myPie = new Chart(ctx).Pie(pieData);
+
+        var bar = document.getElementById("bar").getContext("2d");
+        window.myBar = new Chart(bar).Bar(barChartData, {
+            responsive : true
+        });
     };
 
-
-
-    window.onload = function(){
-
-
-        var ctx = document.getElementById("chart-area").getContext("2d");
-        window.myPie = new Chart(ctx).Pie(pieData);
-    }
 </script>
 
 @endsection

@@ -43,10 +43,6 @@ Route::get('/work/storeSuccess','WorkController@storeSuccess');
 Route::get('/query/status','WorkController@queryStatus');
 
 
-//设置管理员
-Route::get('/admin/setAdmin','AdminController@setAdmin');
-//添加管理员
-Route::post('/admin/addAdmin','AdminController@addAdmin');
 
 
 //判断用户权限
@@ -92,6 +88,20 @@ Route::group(['middleware'=>'ProvinceAdminJudge'],function(){
     Route::get('admin/queryWork/{id}','ProvinceAdminController@query');
     //ajax设置作品奖项
     Route::post('/admin/setReward','ProvinceAdminController@setReward');
+
+    //设置管理员
+    Route::get('/admin/setAdmin','AdminController@setAdmin');
+//添加管理员
+    Route::post('/admin/addAdmin','AdminController@addAdmin');
+//下载文件
+    Route::get('/admin/download/{id}',function($id){
+        return response()->download(
+            realpath(base_path('public/')).'/'.$id.'.pdf',
+            $id.'.pdf'
+        );
+    });
+
+
     //评奖
     Route::get('/admin/award','ProvinceAdminController@award');
     //查看获奖情况

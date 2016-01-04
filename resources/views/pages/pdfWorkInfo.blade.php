@@ -24,10 +24,10 @@
                 <td>作品目的：</td>
                 <td>{{$info['aim']}}</td>
             </tr>
-            <tr>
-                <td>作品独特之处</td>
-                <td>{{$info['brief']}}</td>
-            </tr>
         </table>
+    </div>
+    <div class="row">
+        {!! Form::label('','作品独特之处、先进性：') !!}<br>
+        {{$info['brief']}}
     </div>
     @endsection

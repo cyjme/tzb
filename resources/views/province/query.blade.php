@@ -35,6 +35,10 @@
                 <br>
                 {{$data->brief}}
             </div>
+            <div class="form-group">
+                {!! Form::label('','文档下载：') !!}
+                <a href="/admin/download/{{$data->document_name}}"><button class="btn btn-success">点击下载</button></a>
+            </div>
         </div>
     </div>
 

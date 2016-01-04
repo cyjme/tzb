@@ -13,13 +13,13 @@
         {{--});--}}
     {{--</script>--}}
 {!! csrf_field() !!}
-<div id="myform" class="col-lg-4 col-lg-offset-4" >
+<div  class="col-lg-4 col-lg-offset-4" >
     <div class="panel panel-default">
         <div class="panel-heading">
             <span style="font-family:sans-serif;font-size:20pt;font-weight: bolder;">登录</span>
         </div>
         <div class="panel-body">
-            {!! Form::open(['url'=>'/auth/login']) !!}
+            {!! Form::open(['url'=>'/auth/login','id'=>'myform']) !!}
 
             <div class="form-group">
                 {!! Form::label('email','Email：') !!}
@@ -43,6 +43,32 @@
         </div>
     </div>
 </div>
+
+    <script src="/js/jquery2.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#myform').bootstrapValidator({
+                fields: {
+                    email: {
+                        validators: {
+                            notEmpty: {
+                                message: '邮件地址不能为空'
+                            }
+                        }
+                    },
+                    password: {
+                        validators: {
+                            notEmpty: {
+                                message: '密码不能为空'
+                            }
+                        }
+                    },
+
+
+                },
+            });
+        });
+    </script>
 
 @endsection
 
