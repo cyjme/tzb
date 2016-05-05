@@ -12,25 +12,25 @@
     </div>
 
     {!! Form::open(['url'=>'/admin/articleStore','files'=>true]) !!}
-        <div class="form-group">
-            {!! Form::label('type','请选择信息类型：') !!}
-            {!! Form::select('type',['news'=>'新闻','notice'=>'公告','know'=>'了解','show'=>'展示','banner'=>'轮播图']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('title','请输入文章标题：') !!}
-            {!! Form::text('title',null,['class'=>'form-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('content','请输入文章内容：') !!}
-            <br>
-            {!! Form::textArea('content',null,['class'=>'from-control']) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::label('img','请选择图片：') !!}
-            {!! Form::file('img',null) !!}
-        </div>
-        <div class="form-group">
-            {!! Form::submit('发布文章',['class'=>'btn btn-success form-control']) !!}
-        </div>
+    <div class="form-group">
+        {!! Form::label('type','请选择信息类型：') !!}
+        {!! Form::select('type',['news'=>'新闻','notice'=>'公告','know'=>'了解','show'=>'展示','banner'=>'轮播图']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('title','请输入文章标题：') !!}
+        {!! Form::text('title',null,['class'=>'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('content','请输入文章内容：') !!}
+        <br>
+        {!! Form::textArea('content',null,['class'=>'from-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('img','请选择图片：') !!}
+        {!! Form::file('img',null) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::submit('发布文章',['class'=>'btn btn-success form-control']) !!}
+    </div>
     {!! Form::close() !!}
-    @endsection
+@endsection

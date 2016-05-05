@@ -1,10 +1,10 @@
 <?php
-//³ÌÐòÃû£ºFrontController.php
-//¹¦ÄÜ£º¸øÍøÕ¾Ê×Ò³Ìá¹©Êý¾Ý
-//±»µ÷ÓÃ³ÌÐòÃû£ºµ÷ÓÃ³ÌÐòÃû£º
-//°²È«µÈ¼¶£º2¼¶
-//±à³ÌÈË£º³£Ôª¼ì 15649841368
-//²âÊÔÈË£ºÀîÐ¢´¨ 18839965525
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½FrontController.php
+//ï¿½ï¿½ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾ï¿½ï¿½Ò³ï¿½á¹©ï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+//ï¿½ï¿½È«ï¿½È¼ï¿½ï¿½ï¿½2ï¿½ï¿½
+//ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½Ôªï¿½ï¿½ 15649841368
+//ï¿½ï¿½ï¿½ï¿½ï¿½Ë£ï¿½ï¿½ï¿½Ð¢ï¿½ï¿½ 18839965525
 namespace App\Http\Controllers;
 
 use App\Applicant;
@@ -19,18 +19,18 @@ use Illuminate\Support\Facades\DB;
 class FrontController extends Controller
 {
     public function index(){
-        $news = DB::select('SELECT * FROM articles WHERE TYPE=? limit 7',['news']);
-        $notices = DB::select('SELECT * FROM articles WHERE TYPE=? limit 7',['notice']);
-        $knows = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8',['know']);
-        $shows = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8',['show']);
-        $banners = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8',['banner']);
+			$news = DB::select('SELECT * FROM articles WHERE TYPE=? limit 7', ['news']);
+			$notices = DB::select('SELECT * FROM articles WHERE TYPE=? limit 7', ['notice']);
+			$knows = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8', ['know']);
+			$shows = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8', ['show']);
+			$banners = DB::select('SELECT * FROM articles WHERE TYPE=? limit 8', ['banner']);
 
-        //ÅÐ¶ÏÓÃ»§ÊÇ·ñµÇÂ¼£¬ÈôµÇÂ¼£¬ÅÐ¶ÏÓÐÃ»ÓÐÌîÐ´Éê±¨ÐÅÏ¢
+        //ï¿½Ð¶ï¿½ï¿½Ã»ï¿½ï¿½Ç·ï¿½ï¿½Â¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Ð´ï¿½ê±¨ï¿½ï¿½Ï¢
         if(Auth::check()){
             $user_id = Auth::user()['id'];
             $a = DB::select('SELECT * FROM WORK WHERE user_id =?',[$user_id]);
             if($a == null)
-                //Ê¹ÓÃstatus ÓÃÀ´±ê×¢ÓÐÃ»ÓÐ´´½¨ÏîÄ¿
+                //Ê¹ï¿½ï¿½status ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½Ã»ï¿½Ð´ï¿½ï¿½ï¿½ï¿½ï¿½Ä¿
                 $status =0;
             else
                 $status =1;
@@ -39,7 +39,7 @@ class FrontController extends Controller
     }
 
 
-    //²é¿´ÎÄÕÂÏêÇé
+    //ï¿½é¿´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
     public function query($id){
         $article = DB::select('SELECT * FROM articles WHERE id =?',[$id])[0];
         dd($article);

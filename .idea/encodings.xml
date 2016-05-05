@@ -50,5 +50,6 @@
     <file url="file://$PROJECT_DIR$/resources/views/province/ziran.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/resources/views/school/queryInfo.blade.php" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

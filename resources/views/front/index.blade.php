@@ -116,23 +116,19 @@
                         <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-                        <li data-target="#carousel-example-generic" data-slide-to="7"></li>
                     </ol>
 
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
-                        <div class="item active">
-                            <img src="/articles/img/{{$news[0]->img}}.png" class="img-responsive" alt="Responsive image" style="height: 280px;">
-                            <div class="carousel-caption">
-                            </div>
-                        </div>
+                        {{--<div class="item active">--}}
+                            {{--<img src="/articles/img/{{$news[0]->img}}.png" class="img-responsive" alt="Responsive image" style="height: 280px;">--}}
+                            {{--<div class="carousel-caption">--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+
                         @foreach($news as $new)
                         <div class="item">
-                            <img src="/articles/img/{{$new->img}}.png" class="img-responsive" alt="Responsive image">
+                            <img src="/articles/img/56dbd7dc8dd03.png" class="img-responsive" alt="Responsive image">
                             <div class="carousel-caption">
                             </div>
                         </div>

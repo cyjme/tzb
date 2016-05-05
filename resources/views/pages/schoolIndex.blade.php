@@ -5,7 +5,6 @@
 {{--编程人：常元检 15649841368--}}
 {{--测试人：李孝川 18839965525--}}
 
-
 @extends('layouts.adminSchool')
 @section('content')
     <div class="row" style="padding-top: 20px;">
@@ -18,7 +17,7 @@
                     @foreach($infos as $info)
                     <tr>
                         <td>
-                            <a href="/queryInfo/{{$info->id}}" style="font-size:25px;">{{$info->title}}</a>
+                        <a href="/queryInfo/{{$info->id}}" style="font-size:25px;">{{$info->title}}</a>
                         </td>
                         <td>
                             <span style="font-size:20px;">{{$info->created_at}}</span>

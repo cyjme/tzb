@@ -1,9 +1,3 @@
-{{--程序名：login.blade.php--}}
-{{--功能：登录页面--}}
-{{--被调用程序名：调用程序名：--}}
-{{--安全等级：2--}}
-{{--编程人：常元检 15649841368--}}
-{{--测试人：李孝川 18839965525--}}
 @extends('layouts.main')
 @section('content')
     {{--可以让myform逐渐出现，为myform  加上style="display:none;"--}}
